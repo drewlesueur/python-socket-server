@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<script>
+			var bs //some global fun
+			function browserSocket_ready()
+			{
+				console.log("ready")
+				bs = document.getElementById("bs");
+				
+				//bs.connect("127.0.0.1","5555");
+				bs.connect("192.168.1.106",5555) // linksys gave me that ip
+			}
+			
+			function browserSocket_securityError(e)
+			{
+				console.log("security error", e);
+			}
+			
+			function browserSocket_ioError(e)
+			{
+				console.log("browserSocket_ioError", e)
+			}
+			
+			function browsersocket_ondata(e)
+			{
+				console.log(e);
+			}
+			
+		</script>
+	
+	</head>
+	<body>
+		<embed id = "bs" src = "BrowserSocket.swf"/>
+	</body>
+</html>
